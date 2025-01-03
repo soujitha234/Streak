@@ -20,7 +20,8 @@ There are three ways of splitting nums into two non-empty parts:
 Thus, the number of valid splits in nums is 2.
 */
 
-/*Bruteforce: it takes 2 nested loops for calculating the LeftSum and RightSum*/
+/*Bruteforce: it takes 2 nested loops for calculating the LeftSum and RightSum
+TC: O(mn)*/
 class Solution {
     public int waysToSplitArray(int[] nums) {
         int a=0;
@@ -40,7 +41,8 @@ class Solution {
     }
 }
 
-/*Optimised prefix and suffix sums - includes considering the initial array as the complete right split*/
+/*Optimised prefix and suffix sums - includes considering the initial array as the complete right split
+TC: O(n)*/
 class Solution {
     public int waysToSplitArray(int[] nums) {
         long ls = 0;
