@@ -1,0 +1,33 @@
+/*count of 3-lengthed palindromes
+Example 1:
+Input: s = "aabca"
+Output: 3
+Explanation: The 3 palindromic subsequences of length 3 are:
+- "aba" (subsequence of "aabca")
+- "aaa" (subsequence of "aabca")
+- "aca" (subsequence of "aabca")*/
+
+/*Functions used:
+  s.indexOf(char/String), s.lastIndexOf(char/String) -> returns -1 if not found
+  s. substring(i,j) -> j is exclusive
+  s.toCharArray() -> converts string to character array
+*/
+
+class Solution {
+    public int countPalindromicSubsequence(String s) {
+        HashMap<Character, Integer> hm = new HashMap<>();
+        int count = 0;
+        for(char c='a';c<='z';c++){
+            HashSet<Character> hs = new HashSet<>();
+            if(s.indexOf(c)!=-1 && s.indexOf(c)!=s.lastIndexOf(c)){
+                String ss = s.substring(s.indexOf(c)+1,s.lastIndexOf(c));
+                for(char character : ss.toCharArray()){
+                    hs.add(character);
+                }
+                count+=hs.size();
+            }
+        }
+
+        return count;
+    }
+}
