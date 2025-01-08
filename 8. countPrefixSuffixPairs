@@ -23,7 +23,9 @@ i = 0 and j = 3 because isPrefixAndSuffix("a", "aa") is true.
 i = 1 and j = 2 because isPrefixAndSuffix("aba", "ababa") is true.
 Therefore, the answer is 4.
 */
-
+/*methods learned:
+startsWith(), endsWith() -> returns the boolean based on start or end
+*/
 class Solution {
     public int countPrefixSuffixPairs(String[] words) {
         int c = 0;
