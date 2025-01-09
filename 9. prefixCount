@@ -1,3 +1,7 @@
+/*count of words that has a particular string as prefix*/
+/*Functions used:
+str.startsWith(str): checks if the word starts with particular prefix
+*/
 class Solution {
     public int prefixCount(String[] words, String pref) {
         int c=0;
