@@ -1,0 +1,17 @@
+class Solution {
+    public boolean canConstruct(String s, int k) {
+        if(s.length()<k) return false;
+        if(s.length()==k) return true;
+        int oc = 0;
+        int[] fr = new int[26];
+        for(char ch : s.toCharArray()){
+            fr[ch - 'a']++;
+        }
+        for(int i =0;i<fr.length;i++){
+            if(fr[i]%2!=0){
+                oc++;
+            }
+        }
+        return oc<=k;
+    }
+}
