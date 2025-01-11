@@ -1,3 +1,30 @@
+/*here, we need to return a boolean based on whether we can form 'k' palidromes by using all the chracters of 's'
+Example 1:
+Input: s = "annabelle", k = 2
+Output: true
+Explanation: You can construct two palindromes using all characters in s.
+Some possible constructions "anna" + "elble", "anbna" + "elle", "anellena" + "b" */
+
+/*Approach:
+1. focus on length of  k:
+    if it is greater than length of s, then it directly fails
+    if it is equal to the length of s, it is possible for sure
+2. focus on odd frequency letters,
+    if count of odd frequency letters is greater than k, it fails
+*/
+
+/*fr[ch - 'a']++:
+
+ch - 'a': Calculates the index in the fr array that corresponds to the character ch.
+This works because:
+Characters in Java are represented by their ASCII values.
+Subtracting 'a' from a lowercase letter like 'b' gives the offset (e.g., 'b' - 'a' = 1).
+This maps 'a' to index 0, 'b' to index 1, ..., 'z' to index 25.
+fr[ch - 'a']++: Increments the count of the corresponding letter in the fr array.
+Usage:
+The fr array is typically an integer array of size 26 (int[] fr = new int[26];), representing the frequency of each lowercase letter in the string s.
+*/
+
 class Solution {
     public boolean canConstruct(String s, int k) {
         if(s.length()<k) return false;
