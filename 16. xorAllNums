@@ -1,0 +1,26 @@
+class Solution {
+	public int xorAllNums(int[] nums1, int[] nums2) {
+		int c = 0;
+		if (nums1.length % 2 == 0 && nums2.length % 2 == 0) {
+			return 0;
+		} else if (nums1.length % 2 == 1 && nums2.length % 2 == 1) {
+			for (int i : nums1) {
+				c = i ^ c;
+			}
+			for (int i : nums2) {
+				c = i ^ c;
+			}
+		} else {
+			if (nums1.length % 2 == 0) {
+				for (int i : nums1) {
+					c = i ^ c;
+				}
+			} else {
+				for (int i : nums2) {
+					c = i ^ c;
+				}
+			}
+		}
+		return c;
+	}
+}
