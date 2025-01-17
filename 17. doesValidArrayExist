@@ -20,6 +20,16 @@ derived[0] = original[0] ⊕ original[1] = 0 ⊕ 1 = 1
 derived[1] = original[1] ⊕ original[2] = 1 ⊕ 0 = 1
 derived[2] = original[2] ⊕ original[0] = 0 ⊕ 0 = 0*/
 
+/*
+derived = [d1, d2, d3] and original = [x1, x2, x3]
+
+each of the derived element "formula" are these:
+d1 = x1 ^ x2, d2 = x2 ^ x3, d3 = x3 ^ x1
+
+if we XOR all of derived numbers, then it can be rewritten as:
+from d1 ^ d2 ^ d3 to x1 ^ x2 ^ x2 ^ x3 ^ x3 ^ x1. All of original elements appear in pairs thus cancelling out each other which give the result as 0, thus d1 ^ d2 ^ d3 = 0
+*/
+
 class Solution {
     public boolean doesValidArrayExist(int[] derived) {
         int c = 0;
